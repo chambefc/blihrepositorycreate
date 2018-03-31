@@ -9,12 +9,15 @@
     Then change the LOGIN and PASSWORD variables in the script with your own info (your epitech address for LOGIN and your password converted in SHA512 for PASSWORD).
 
 2. To install the script, you have to copy it in your /usr/bin/ folder, using sudo.
-    
-    E.g. $ sudo cp scriptblih /usr/bin/
+
+    Example:
+
+    sudo cp scriptblih /usr/bin/
 
 3. Then to use it, create an alias in your bashrc / zshrc or whatever with the name of the script with a dot and a blank space :
+    Example:
 
-    E.g. alias createrepo='. scriptblih'
+    alias createrepo='. scriptblih'
   
     THE DOT AND THE BLANK SPACE ARE VERY IMPORTANT DON'T FORGET IT ! You can copy the example above and paste it directly in  your bashrc.
 
