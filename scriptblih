@@ -1,0 +1,37 @@
+# @Author: Camille Chambefort <chambefc>
+# @Date:   2018
+# @Email:  camille.chambefort@epitech.eu
+# @Project: Another epic project
+# @Filename: scriptblih
+# @Last modified by:   chambefc
+# @Last modified time: 2018
+
+#!/bin/bash
+
+LOGIN='YOUR_EPITECH_LOGIN'
+PASSWORD='YOUR_EPITECH_PASSWORD_ENCODED_IN_SHA_512'
+REPO=$1
+
+echo '======================================================================='
+echo "Creating repository : '$REPO'"
+blih -u "$LOGIN" -t "$PASSWORD" repository create "$REPO"
+echo 'Setting ACL to ramassage tek - Read only'
+blih -u $LOGIN -t $PASSWORD repository setacl $REPO ramassage-tek r
+echo '======================================================================='
+if (( $# > 1 )); then
+	echo 'Setting ACL to additional users'
+	for var in "$@"
+	do
+    		if [ "$var" != "$REPO" ]; then
+			echo "$var : "
+			blih -u $LOGIN -t $PASSWORD repository setacl $REPO $var rw
+		fi
+	done
+fi
+echo '======================================================================='
+echo 'Rights check on repository' $1 ':'
+blih -u $LOGIN -t $PASSWORD repository getacl $1
+echo '======================================================================='
+echo "Cloning repository in current directory : "
+git clone git@git.epitech.eu:/$LOGIN/$REPO
+cd $REPO
