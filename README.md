@@ -22,6 +22,13 @@
   
     THE DOT AND THE BLANK SPACE ARE VERY IMPORTANT DON'T FORGET IT ! You can copy the example above and paste it directly in  your bashrc.
 
+4. Finally, close all terminals in order to source (refresh) every file involved in the use of the script.
+
+
+    Here you go !
+
+
+
 # DESCRIPTION
 
 This script allows you to create an Epitech repository, set its ACL to ramassage-tek in readonly mode and eventually, other users.
