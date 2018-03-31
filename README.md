@@ -15,6 +15,7 @@
     sudo cp scriptblih /usr/bin/
 
 3. Then to use it, create an alias in your bashrc / zshrc or whatever with the name of the script with a dot and a blank space :
+
     Example:
 
     alias createrepo='. scriptblih'
